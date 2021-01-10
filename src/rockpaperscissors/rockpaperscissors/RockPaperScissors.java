@@ -85,23 +85,27 @@ public class RockPaperScissors {
             }
             if (userInput == 1) {
                 rockUsr = userInput;
-                System.out.println("You chose to play \"rock\"");
+                System.out.println("You play \"rock\"");
             }
             if (userInput == 2) {
                 paperUsr = userInput;
-                System.out.println("You chose to play \"paper\"");
+                System.out.println("You play \"paper\"");
             }
             if (userInput == 3) {
                 scissorsUsr = userInput;
-                System.out.println("You chose to play \"scissors\"");
+                System.out.println("You play \"scissors\"");
             }
             if (userInput == 4) {
                 lizardUsr = userInput;
-                System.out.println("You chose to play \"lizard\"");
+                System.out.println("You play \"lizard\"");
             }
             if (userInput == 5) {
                 spockUsr = userInput;
-                System.out.println("You chose to play \"Spock\"");
+                System.out.println("You play \"Spock\"");
+            }
+            
+            if (((randomiser == 1 || randomiser == 2) && userInput == 1) || ((randomiser == 3 || randomiser == 4) && userInput == 2) || ((randomiser == 5 || randomiser == 6) && userInput == 3) || ((randomiser == 7 || randomiser == 8) && userInput == 4) || ((randomiser == 9 || randomiser == 10) && userInput == 5)) {
+                System.out.println("It's a draw!");
             }
         } 
         
