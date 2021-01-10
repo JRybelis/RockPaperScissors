@@ -52,17 +52,8 @@ public class RockPaperScissors {
         int winsCpu = 0;
         int winsUsr = 0;
         int gamesTied = 0;
-        // boolean rockCrush;
-        // boolean rockCrush2;
-        // boolean paperCover;
-        // boolean paperDisprove;
-        // boolean scissorsCut;
-        // boolean scissorsDedapitate;
-        // boolean lizardPoison;
-        // boolean lizardEat;
-        // boolean spockSmash;
-        // boolean spockVapourise; 
-
+     
+        int userInput = sc.nextInt();
         
         while (userInput != 0) {
             do {
@@ -73,58 +64,231 @@ public class RockPaperScissors {
                 System.out.println("4. Lizard");
                 System.out.println("5. Spock");
                 System.out.println("0. End the game");
-                int userInput = sc.nextInt();
             }
-            while (userInput > 5 || userInput < 0);
-                int randomiser = (int) (Math.random() * 10 + 1);
-                if (randomiser == 1 || randomiser == 2)  {
-                    rockCpu ++; 
-                    System.out.println("Computer opponent plays \"rock\"");
+            while (userInput > 5);
+                int randomiser = (int) (Math.random() * 5 + 1);
+                
+                if (randomiser == 1 && userInput == 4) {
+                    System.out.println("Computer opponent plays \"rock\".");
+                    System.out.println("You play \"lizard\".");
+                    System.out.println("Rock crushes lizard. Computer wins.");
+                    rockCpu ++;
+                    lizardUsr ++;
+                    roundsPlayed ++;
+                    winsCpu ++;
                 }
-                if (randomiser == 3 || randomiser == 4) {
+                if (randomiser == 1 && userInput == 3) {
+                    System.out.println("Computer opponent plays \"rock\".");
+                    System.out.println("You play \"scissors\".");
+                    System.out.println("As it always has, rock crushes scissors. Computer wins.");
+                    rockCpu ++;
+                    scissorsUsr ++;
+                    roundsPlayed ++;
+                    winsCpu ++;
+                }
+                if (randomiser == 2 && userInput == 5) {
+                    System.out.println("Computer opponent plays \"paper\".");
+                    System.out.println("You play \"Spock\".");
+                    System.out.println("Paper disproves Spock. Computer wins.");
                     paperCpu ++;
-                    System.out.println("Computer opponent plays \"paper\"");
+                    spockUsr ++;
+                    roundsPlayed ++;
+                    winsCpu ++;
                 }
-                if (randomiser == 5 || randomiser == 6) {
+                if (randomiser == 2 && userInput == 1) {
+                    System.out.println("Computer opponent plays \"paper\".");
+                    System.out.println("You play \"rock\".");
+                    System.out.println("Paper covers rock. Computer wins.");
+                    paperCpu ++;
+                    rockUsr ++;
+                    roundsPlayed ++;
+                    winsCpu ++;
+                }
+                if (randomiser == 3 && userInput == 2) {
+                    System.out.println("Computer opponent plays \"scissors\".");
+                    System.out.println("You play \"paper\".");
+                    System.out.println("Scissors cut paper. Computer wins.");
                     scissorsCpu ++;
-                    System.out.println("Computer opponent plays \"scissors\"");
+                    paperUsr ++;
+                    roundsPlayed ++;
+                    winsCpu ++;
                 }
-                if (randomiser == 7 || randomiser == 8) {
+                if (randomiser == 3 && userInput == 4) {
+                    System.out.println("Computer opponent plays \"scissors\".");
+                    System.out.println("You play \"lizard\".");
+                    System.out.println("Scissors decapitate lizard. Computer wins.");
+                    scissorsCpu ++;
+                    lizardUsr ++;
+                    roundsPlayed ++;
+                    winsCpu ++;
+                }
+                if (randomiser == 4 && userInput == 5) {
+                    System.out.println("Computer opponent plays \"lizard\".");
+                    System.out.println("You play \"Spock\".");
+                    System.out.println("Lizard poisons Spock. Computer wins.");
                     lizardCpu ++;
-                    System.out.println("Computer opponent plays \"lizard\"");
+                    spockUsr ++;
+                    roundsPlayed ++;
+                    winsCpu ++;
                 }
-                if (randomiser == 9 || randomiser == 10) {
+                if (randomiser == 4 && userInput == 2) {
+                    System.out.println("Computer opponent plays \"lizard\".");
+                    System.out.println("You play \"paper\".");
+                    System.out.println("Lizard eats paper. Computer wins.");
+                    lizardCpu ++;
+                    paperUsr ++;
+                    roundsPlayed ++;
+                    winsCpu ++;
+                }
+                if (randomiser == 5 && userInput == 3) {
+                    System.out.println("Computer opponent plays \"Spock\".");
+                    System.out.println("You play \"scissors\".");
+                    System.out.println("Spock smashes scissors. Computer wins.");
                     spockCpu ++;
-                    System.out.println("Computer opponent plays \"Spock\"");
+                    scissorsUsr ++;
+                    roundsPlayed ++;
+                    winsCpu ++;
+                }
+                if (randomiser == 5 && userInput == 1) {
+                    System.out.println("Computer opponent plays \"Spock\".");
+                    System.out.println("You play \"rock\".");
+                    System.out.println("Spock vapourises rock. Computer wins.");
+                    spockCpu ++;
+                    rockUsr ++;
+                    roundsPlayed ++;
+                    winsCpu ++;
                 }
 
-                if (userInput == 1) {
+                if (userInput == 1 && randomiser == 4) {
+                    System.out.println("You play \"rock\".");
+                    System.out.println("Computer opponent plays \"lizard\".");
+                    System.out.println("Rock crushes lizard. You win.");
                     rockUsr ++;
-                    System.out.println("You play \"rock\"");
+                    lizardCpu ++;
+                    roundsPlayed ++;
+                    winsUsr ++;
                 }
-                if (userInput == 2) {
+                if (userInput == 1 && randomiser == 3) {
+                    System.out.println("You play \"rock\".");
+                    System.out.println("Computer opponent plays \"scissors\".");
+                    System.out.println("As it always has, rock crushes scissors. You win.");
+                    rockUsr ++;
+                    scissorsCpu ++;
+                    roundsPlayed ++;
+                    winsUsr ++;
+                }
+                if (userInput == 2 && randomiser == 5) {
+                    System.out.println("You play \"paper\".");
+                    System.out.println("Computer opponent plays \"Spock\".");
+                    System.out.println("Paper disproves Spock. You win.");
                     paperUsr ++;
-                    System.out.println("You play \"paper\"");
+                    spockCpu ++;
+                    roundsPlayed ++;
+                    winsUsr ++;
                 }
-                if (userInput == 3) {
+                if (userInput == 2 && randomiser == 1) {
+                    System.out.println("You play \"paper\".");
+                    System.out.println("Computer opponent plays \"rock\".");
+                    System.out.println("Paper covers rock. You win.");
+                    paperUsr ++;
+                    rockCpu ++;
+                    roundsPlayed ++;
+                    winsUsr ++;
+                }
+                if (userInput == 3 && randomiser == 2) {
+                    System.out.println("You play \"scissors\".");
+                    System.out.println("Computer opponent plays \"paper\".");
+                    System.out.println("Scissors cut paper. You win.");
                     scissorsUsr ++;
-                    System.out.println("You play \"scissors\"");
+                    paperCpu ++;
+                    roundsPlayed ++;
+                    winsUsr ++;
                 }
-                if (userInput == 4) {
+                if (userInput == 3 && randomiser == 4) {
+                    System.out.println("You play \"scissors\".");
+                    System.out.println("Computer opponent plays \"lizard\".");
+                    System.out.println("Scissors decapitate lizard. You win.");
+                    scissorsUsr ++;
+                    lizardCpu ++;
+                    roundsPlayed ++;
+                    winsUsr ++;
+                }
+                if (userInput == 4 && randomiser == 5) {
+                    System.out.println("You play \"lizard\".");
+                    System.out.println("Computer opponent plays \"Spock\".");
+                    System.out.println("Lizard poisons Spock. You win.");
                     lizardUsr ++;
-                    System.out.println("You play \"lizard\"");
+                    spockCpu ++;
+                    roundsPlayed ++;
+                    winsUsr ++;
                 }
-                if (userInput == 5) {
+                if (userInput == 4 && randomiser == 2) {
+                    System.out.println("You play \"lizard\".");
+                    System.out.println("Computer opponent plays \"paper\".");
+                    System.out.println("Lizard eats paper. You win.");
+                    lizardUsr ++;
+                    paperCpu ++;
+                    roundsPlayed ++;
+                    winsUsr ++;
+                }
+                if (userInput == 5 && randomiser == 3) {
+                    System.out.println("You play \"Spock\".");
+                    System.out.println("Computer opponent plays \"scissors\".");
+                    System.out.println("Spock smashes scissors. You win.");
                     spockUsr ++;
-                    System.out.println("You play \"Spock\"");
+                    scissorsCpu ++;
+                    roundsPlayed ++;
+                    winsUsr ++;
+                }
+                if (userInput == 5 && randomiser == 1) {
+                    System.out.println("You play \"Spock\".");
+                    System.out.println("Computer opponent plays \"rock\".");
+                    System.out.println("Spock vapourises rock. You win.");
+                    spockUsr ++;
+                    rockCpu ++;
+                    roundsPlayed ++;
+                    winsUsr ++;
                 }
                 
-                if (((randomiser == 1 || randomiser == 2) && userInput == 1) || ((randomiser == 3 || randomiser == 4) && userInput == 2) || ((randomiser == 5 || randomiser == 6) && userInput == 3) || ((randomiser == 7 || randomiser == 8) && userInput == 4) || ((randomiser == 9 || randomiser == 10) && userInput == 5)) {
+                // if ((randomiser == 1 && userInput == 1) || (randomiser == 2 && userInput == 2) || (randomiser == 3 && userInput == 3) || (randomiser == 4 && userInput == 4) || (randomiser == 5 && userInput == 5)) {
+                if (randomiser == userInput) {
                     System.out.println("It's a draw!");
                     gamesTied ++;
+                    if (userInput == 1) {
+                        rockUsr ++;
+                    }
+                    if (userInput == 2) {
+                        paperUsr ++;
+                    }
+                    if (userInput == 3) {
+                        scissorsUsr ++;
+                    }
+                    if (userInput == 4) {
+                        lizardUsr ++;
+                    }
+                    if (userInput == 5) {
+                        spockUsr ++;
+                    }
+
+                    if (randomiser == 1) {
+                        rockCpu ++;
+                    }
+                    if (randomiser == 2) {
+                        paperCpu ++;
+                    }
+                    if (randomiser == 3) {
+                        scissorsCpu ++;
+                    }
+                    if (randomiser == 4) {
+                        lizardCpu ++;
+                    }
+                    if (randomiser == 5) {
+                        spockCpu ++;
+                    }
                 }
-             
-            
+
+            }
+            if (roundsPlayed != 0) { 
             float rockUsrPerCent = rockUsr * 100f / roundsPlayed;
             float paperUsrPerCent = paperUsr * 100f / roundsPlayed;
             float scissorsUsrPerCent = scissorsUsr * 100f / roundsPlayed;
@@ -155,11 +319,11 @@ public class RockPaperScissors {
             System.out.println("Lizard: " + lizardCpu + " times, " + lizardCpuPerCent + "%");
             System.out.println("Spock: " + spockCpu + " times, " + spockCpuPerCent + "%");
             if (winsCpu > winsUsr) {
-                System.out.println("Computer wins by a margin of" + (winsCpu - winsUsr) + ". Better luck next time!");
+                System.out.println("Computer won by a margin of" + (winsCpu - winsUsr) + ". Better luck next time!");
             } else {
-                System.out.println("You win by a margin of" + (winsUsr - winsCpu) + ". Well done!");
+                System.out.println("You won by a margin of" + (winsUsr - winsCpu) + ". Well done!");
             }
-            }
+            
         } 
         
         // System.out.println(randomiser);
