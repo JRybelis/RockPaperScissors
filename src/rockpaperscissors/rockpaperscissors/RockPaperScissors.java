@@ -5,7 +5,6 @@
  */
 package rockpaperscissors;
 
-import java.io.Console;
 import java.util.Scanner;
 
 /**
@@ -248,6 +247,7 @@ public class RockPaperScissors {
                 
                 if (randomiser == userInput) {
                     gamesTied ++;
+                    roundsPlayed ++;
                     if (userInput == 1) {
                         System.out.println("You play \"rock\".");
                         rockUsr ++;
