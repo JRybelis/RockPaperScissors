@@ -29,13 +29,6 @@ public class RockPaperScissors {
         System.out.println("To begin, press the number key on your keyboard, which corresponds to one of the choices below:");
         System.out.println();
 
-        // System.out.println("1. Rock");    
-        // System.out.println("2. Paper");
-        // System.out.println("3. Scissors");
-        // System.out.println("4. Lizard");
-        // System.out.println("5. Spock");
-        // System.out.println("0. End the game");
-        
         int rockCpu = 0;
         int paperCpu = 0;
         int scissorsCpu = 0;
