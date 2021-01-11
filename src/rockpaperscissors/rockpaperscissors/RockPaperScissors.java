@@ -29,18 +29,18 @@ public class RockPaperScissors {
         System.out.println("To begin, press the number key on your keyboard, which corresponds to one of the choices below:");
         System.out.println();
 
-        System.out.println("1. Rock");    
-        System.out.println("2. Paper");
-        System.out.println("3. Scissors");
-        System.out.println("4. Lizard");
-        System.out.println("5. Spock");
-        System.out.println("0. End the game");
+        // System.out.println("1. Rock");    
+        // System.out.println("2. Paper");
+        // System.out.println("3. Scissors");
+        // System.out.println("4. Lizard");
+        // System.out.println("5. Spock");
+        // System.out.println("0. End the game");
         
-        float rockCpu = 0;
-        float paperCpu = 0;
-        float scissorsCpu = 0;
-        float lizardCpu = 0;
-        float spockCpu = 0;
+        int rockCpu = 0;
+        int paperCpu = 0;
+        int scissorsCpu = 0;
+        int lizardCpu = 0;
+        int spockCpu = 0;
 
         int rockUsr = 0;
         int paperUsr = 0;
@@ -53,10 +53,12 @@ public class RockPaperScissors {
         int winsUsr = 0;
         int gamesTied = 0;
      
-        int userInput = sc.nextInt();
+        int userInput = 5;
         
         while (userInput != 0) {
             do {
+                System.out.println();
+                System.out.println();
                 System.out.println("Rounds played so far: " + roundsPlayed);
                 System.out.println("1. Rock");    
                 System.out.println("2. Paper");
@@ -64,6 +66,7 @@ public class RockPaperScissors {
                 System.out.println("4. Lizard");
                 System.out.println("5. Spock");
                 System.out.println("0. End the game");
+                userInput = sc.nextInt();
             }
             while (userInput > 5);
                 int randomiser = (int) (Math.random() * 5 + 1);
@@ -250,60 +253,77 @@ public class RockPaperScissors {
                     winsUsr ++;
                 }
                 
-                // if ((randomiser == 1 && userInput == 1) || (randomiser == 2 && userInput == 2) || (randomiser == 3 && userInput == 3) || (randomiser == 4 && userInput == 4) || (randomiser == 5 && userInput == 5)) {
                 if (randomiser == userInput) {
-                    System.out.println("It's a draw!");
                     gamesTied ++;
                     if (userInput == 1) {
+                        System.out.println("You play \"rock\".");
                         rockUsr ++;
                     }
                     if (userInput == 2) {
+                        System.out.println("You play \"paper\".");
                         paperUsr ++;
                     }
                     if (userInput == 3) {
+                        System.out.println("You play \"scissors\".");
                         scissorsUsr ++;
                     }
                     if (userInput == 4) {
+                        System.out.println("You play \"lizard\".");
                         lizardUsr ++;
                     }
                     if (userInput == 5) {
+                        System.out.println("You play \"Spock\".");
                         spockUsr ++;
                     }
 
                     if (randomiser == 1) {
+                        System.out.println("Computer opponent plays \"rock\".");
                         rockCpu ++;
                     }
                     if (randomiser == 2) {
+                        System.out.println("Computer opponent plays \"paper\".");
                         paperCpu ++;
                     }
                     if (randomiser == 3) {
+                        System.out.println("Computer opponent plays \"scissors\".");
                         scissorsCpu ++;
                     }
                     if (randomiser == 4) {
+                        System.out.println("Computer opponent plays \"lizard\".");
                         lizardCpu ++;
                     }
                     if (randomiser == 5) {
+                        System.out.println("Computer opponent plays \"Spock\".");
                         spockCpu ++;
                     }
+                    System.out.println("It's a draw!");
                 }
-
             }
-            if (roundsPlayed != 0) { 
-            float rockUsrPerCent = rockUsr * 100f / roundsPlayed;
-            float paperUsrPerCent = paperUsr * 100f / roundsPlayed;
-            float scissorsUsrPerCent = scissorsUsr * 100f / roundsPlayed;
-            float lizardUsrPerCent = lizardUsr * 100f / roundsPlayed;
-            float spockUsrPerCent = spockUsr * 100f / roundsPlayed;
-            float rockCpuPerCent = rockCpu * 100f / roundsPlayed;
-            float paperCpuPerCent = paperCpu * 100f / roundsPlayed;
-            float scissorsCpuPerCent = scissorsCpu * 100f / roundsPlayed;
-            float lizardCpuPerCent = lizardCpu * 100f / roundsPlayed;
-            float spockCpuPerCent = spockCpu * 100f / roundsPlayed;
+            if (roundsPlayed != 0 && userInput == 0) { 
+            int rockUsrPerCent = rockUsr * 100 / roundsPlayed;
+            int paperUsrPerCent = paperUsr * 100 / roundsPlayed;
+            int scissorsUsrPerCent = scissorsUsr * 100 / roundsPlayed;
+            int lizardUsrPerCent = lizardUsr * 100 / roundsPlayed;
+            int spockUsrPerCent = spockUsr * 100 / roundsPlayed;
+            int rockCpuPerCent = rockCpu * 100 / roundsPlayed;
+            int paperCpuPerCent = paperCpu * 100 / roundsPlayed;
+            int scissorsCpuPerCent = scissorsCpu * 100 / roundsPlayed;
+            int lizardCpuPerCent = lizardCpu * 100 / roundsPlayed;
+            int spockCpuPerCent = spockCpu * 100 / roundsPlayed;
             System.out.println("Overall game statistics: ");
+            System.out.println();
             System.out.println("Rounds played: " + roundsPlayed);
             System.out.println("You have won: " + winsUsr + " times.");
             System.out.println("The Computer has won: " + winsCpu + " times.");
             System.out.println("You and computer were tied: " + gamesTied + " times.");
+            if ( winsCpu == winsUsr) {
+                System.out.println("You are equally matched with the Computer.");
+            }
+            else if (winsCpu > winsUsr) {
+                System.out.println("Computer won by a margin of " + (winsCpu - winsUsr) + ". Better luck next time!");
+            } else {
+                System.out.println("You won by a margin of " + (winsUsr - winsCpu) + ". Well done!");
+            }
             System.out.println();
             System.out.println("Your choices: ");
             System.out.println("Rock: " + rockUsr + " times, " + rockUsrPerCent + "%");
@@ -318,16 +338,6 @@ public class RockPaperScissors {
             System.out.println("Scissors: " + scissorsCpu + " times, " + scissorsCpuPerCent + "%");
             System.out.println("Lizard: " + lizardCpu + " times, " + lizardCpuPerCent + "%");
             System.out.println("Spock: " + spockCpu + " times, " + spockCpuPerCent + "%");
-            if (winsCpu > winsUsr) {
-                System.out.println("Computer won by a margin of" + (winsCpu - winsUsr) + ". Better luck next time!");
-            } else {
-                System.out.println("You won by a margin of" + (winsUsr - winsCpu) + ". Well done!");
-            }
-            
         } 
-        
-        // System.out.println(randomiser);
-        
     }
-    
 }
